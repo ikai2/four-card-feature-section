@@ -1,0 +1,139 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+:root {
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+    --very-dark-blue: hsl(234, 12%, 34%);
+    --grayish-blue: hsl(229, 6%, 66%);
+    --very-light-gray: hsl(0, 0%, 98%);
+    --white: hsl(0, 0, 100%);
+}
+
+img {
+    display: block;
+    max-width: 64px;
+    height: 64px;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--very-light-gray);
+    font-family: "Poppins", sans-serif;
+    color: var(--very-dark-blue);
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 15px;
+    gap: 4rem;
+}
+
+.poweredby {
+    text-align: center;
+    max-width: 540px;
+}
+
+h1,
+h2 {
+    font-size: 2rem;
+}
+
+h2 {
+    margin-bottom: 1rem;
+}
+p {
+    opacity: 0.5;
+}
+h1 {
+    font-weight: 300;
+    letter-spacing: 0.25px;
+}
+h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.cards {
+    display: flex;
+    gap: 28px;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    max-width: 350px;
+    min-height: 250px;
+    padding: 2rem;
+    border-radius: 8px;
+    background: var(--white);
+    box-shadow: 0px 15px 30px -11px rgba(131, 166, 210, 0.5);
+    align-self: center;
+}
+
+.card p {
+    font-size: 13px;
+    line-height: 23px;
+    letter-spacing: 0.09px;
+}
+
+.card img {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+}
+
+.middle-card {
+    flex-direction: column;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+}
+
+.card.supervisor::before {
+    background-color: var(--cyan);
+}
+.card.team-builder::before {
+    background-color: var(--red);
+}
+.card.karma::before {
+    background-color: var(--orange);
+}
+.card.calculator::before {
+    background-color: var(--blue);
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 5rem 2rem;
+    }
+    h1,
+    h2 {
+        font-size: 1.5rem;
+    }
+    .cards,
+    .middle-card {
+        flex-direction: column;
+    }
+}
